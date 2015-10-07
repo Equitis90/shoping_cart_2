@@ -1,0 +1,13 @@
+<%= form_for @product_type do |f| %>
+    <div class="row">
+      <div class="col-xs-4">
+        <%= label_tag 'Title' %>
+        <%= f.text_field :title, value: @product_type.title, placeholder: 'title' %>
+      </div>
+      <div class="col-xs-8 text-right">
+        <div class="btn-group">
+          <%= f.submit "Save", class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+<% end %>

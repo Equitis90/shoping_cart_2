@@ -1,7 +1,14 @@
+OrderItem.delete_all
+Order.delete_all
+
+ProductType.delete_all
+ProductType.create! id:1, title: 'Coffee'
+ProductType.create! id:2, title: 'Tea'
+
 Product.delete_all
-Product.create! id: 1, name: "Banana", price: 0.49, active: true
-Product.create! id: 2, name: "Apple", price: 0.29, active: true
-Product.create! id: 3, name: "Carton of Strawberries", price: 1.99, active: true
+Product.create! id: 1, name: "Black tea", price: 2.55, active: true, product_type_id: 2
+Product.create! id: 2, name: "Green tea", price: 1.29, active: true, product_type_id: 2
+Product.create! id: 3, name: "Arabica coffee", price: 1.99, active: true, product_type_id: 1
 
 OrderStatus.delete_all
 OrderStatus.create! id: 1, name: "In Progress"

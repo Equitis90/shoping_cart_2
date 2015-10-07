@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-xs-9 text-right">
+    <%= link_to 'New product type', new_product_type_path, class: "btn btn-success" %>
+  </div>
+</div>
+
+<h3 class="text-center">Product types</h3>
+
+<div class="row">
+  <div class="col-xs-6 col-xs-offset-3">
+    <% @product_types.each do |product_type| %>
+        <div class="well">
+
+          <div class="row">
+            <div class="col-xs-8">
+              <h4><%= product_type.title %></small></h4>
+            </div>
+            <div class="col-xs-4">
+            <div class="input-group-btn">
+              <%= link_to 'Edit', product_type_path(id: product_type.id), class: "btn btn-primary" %>
+              <%= link_to 'Delete', product_type_path(id: product_type.id), { data: { confirm: "Are you sure you wish to delete the product type '#{product_type.title}'?" } , method: :delete, class: "btn btn-danger" } %>
+            </div>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>
