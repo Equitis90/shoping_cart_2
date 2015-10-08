@@ -3,10 +3,6 @@ class ProductTypesController < ApplicationController
     @product_types = ProductType.all
   end
 
-  def show
-    @product_type = ProductType.find(params[:id])
-  end
-
   def new
     @product_type = ProductType.new
   end
@@ -17,7 +13,7 @@ class ProductTypesController < ApplicationController
       flash[:info] = 'Product type created!'
       redirect_to product_types_path
     else
-      flash[:danger] = @product_type.errors.full_messages.join('\r\n')
+      flash[:danger] = @product_type.errors.errors.full_messages.join("<br/>")
       redirect_to product_types_path
     end
   end
@@ -28,7 +24,7 @@ class ProductTypesController < ApplicationController
       flash[:info] = 'Product type saved!'
       redirect_to product_types_path
     else
-      flash[:danger] = @product_type.errors.full_messages.join('\r\n')
+      flash[:danger] = @product_type.errors.full_messages.join("<br/>")
       redirect_to product_types_path
     end
   end
@@ -39,7 +35,7 @@ class ProductTypesController < ApplicationController
       flash[:info] = 'Product type deleted!'
       redirect_to product_types_path
     else
-      flash[:danger] = @product_type.errors.full_messages.join('\r\n')
+      flash[:danger] = @product_type.errors.full_messages.join("<br/>")
       redirect_to product_types_path
     end
   end

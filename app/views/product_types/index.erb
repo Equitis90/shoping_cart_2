@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-xs-12 text-right">
+    <%= link_to 'New product type', new_product_type_path, class: "btn btn-success" %>
+  </div>
+</div>
+
+<h3 class="text-center">Product types</h3>
+
+<div class="row">
+  <div class="col-xs-12">
+    <% @product_types.each do |product_type| %>
+        <%= render "edit_product_type_row", product_type: product_type %>
+    <% end %>
+  </div>
+</div>
